@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lynx-Shopsite</title>
+  </head>
+  <body>
+    <p th:text="${message}"></p>
+    <form
+      th:action="@{/after_delete_product}"
+      th:object="${productForm}"
+      method="post"
+    >
+    Product code：<input type="text" th:field="*{code}" />
+      <br />
+      <input type="submit" value="delete" />
+      <br />
+    </form>
+  </body>
+</html>
