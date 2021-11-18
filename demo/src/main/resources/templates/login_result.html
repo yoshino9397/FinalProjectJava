@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lynx-Shopsite</title>
+  </head>
+  <body>
+    <p th:text="${message}"></p>
+    <div th:if="${#strings.equals(message, 'Login was successful')}">
+      <a href="/admin_menu">Administrator menu</a>
+    </div>
+    <div th:if="${#strings.equals(message, 'Failed to login')}">
+      <a href="/login">Please login again</a>
+    </div>
+  </body>
+</html>
