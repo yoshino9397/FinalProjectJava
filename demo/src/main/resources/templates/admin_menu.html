@@ -3,15 +3,37 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/admin_menu.css}" rel="stylesheet">
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <a href="/show_product">Display of all registered products</a>
-    <br />
-    <a href="/register_product">Product registration</a>
-    <br />
-    <a href="/update_product">Product update</a>
-    <br />
-    <a href="/delete_product">Delete product</a>
+    <!-- <p th:text="${message}"></p> -->
+
+    <p>Please Select a Menu</p>
+    <div class="container">
+
+      <div class="menu-wrapper">
+
+        <div class="menu">
+          <ul class="first-row">
+            <li class="border">
+              <a href="/show_product">Display of all registered products</a>
+            </li>
+            <li class="border">
+              <a href="/register_product">Product registration</a>
+            </li>
+          </ul>
+            
+          <ul class="second-row">
+            <li class="border">
+              <a href="/update_product">Product update</a>
+            </li>
+            <li class="border">
+              <a href="/delete_product">Delete product</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      </div>
   </body>
 </html>
