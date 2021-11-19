@@ -5,14 +5,23 @@
     <title>Lynx-Shopsite</title>
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <form th:action="@{/login_result}" th:object="${loginForm}" method="post">
-      ID：<input type="text" th:field="*{id}" />
-      <br />
-      Your Name：<input type="text" th:field="*{name}" />
-      <br />
-      <input type="submit" value="Login" />
-      <br />
-    </form>
+    <div class="container">
+      <form th:action="@{/login_result}" th:object="${loginForm}" method="post">
+        <p th:text="${message}"></p>
+        <div class="yourid">
+          <input class="idfield" type="text" placeholder="ID" th:field="*{id}" />
+        </div>
+        <br />
+        <div class="yourname">
+          <input class="namefield" type="text" placeholder="Name" th:field="*{name}" />
+        </div>
+        <br />
+        <div class="loginbtn">
+          <input class="btn" type="submit" value="LOGIN" />
+        </div>
+        <br />
+      </form>
+    </div>
+
   </body>
 </html>
