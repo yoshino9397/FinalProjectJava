@@ -6,7 +6,7 @@
   </head>
   <body>
     <p th:text="${message}"></p>
-    <form th:action="@{/show_result}" th:object="${productForm}" method="post">
+    <form th:action="@{/show_register_result}" th:object="${productForm}" method="post">
       Product code：<input type="text" th:field="*{code}" />
       <br />
       Product name：<input type="text" th:field="*{name}" />
