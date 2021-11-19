@@ -3,14 +3,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/login_result.css}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../static/css/login_result.css"> -->
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <div th:if="${#strings.equals(message, 'Login was successful')}">
-      <a href="/admin_menu">Administrator menu</a>
-    </div>
-    <div th:if="${#strings.equals(message, 'Failed to login')}">
-      <a href="/login">Please login again</a>
+    <div class="container">
+
+      <p th:text="${message}"></p>
+      
+      <div class="btn" th:if="${#strings.equals(message, 'Login was successful')}">
+        <a href="/admin_menu">Administrator menu</a>
+      </div>
+      
+      <div class="btn" th:if="${#strings.equals(message, 'Failed to login')}">
+        <a href="/login">Please login again</a>
+      </div>
+
     </div>
   </body>
 </html>
