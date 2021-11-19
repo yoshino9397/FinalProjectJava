@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../imgs/bgi03.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  font-family: "Arial";
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form {
+  width: 400px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  /* box-shadow: 0 0 3px rgba(68, 68, 68, 0.3); */
+  background-color: #d9b28cb2;
+  box-shadow: 0.1rem 0.1rem 0.6rem #ccc, -0.1rem -0.1rem 0.6rem #ccc;
+  padding: 5rem;
+  text-align: center;
+}
+
+.container p {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+.yourid,
+.yourneme {
+  margin-bottom: 5px;
+}
+input {
+  background-color: transparent;
+  color: #fff;
+}
+.idfield,
+.namefield {
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 50px;
+  line-height: 25px;
+  padding: 10px 10px 10px 15px;
+  width: 60%;
+  letter-spacing: 2px;
+}
+.idfield::placeholder,
+.namefield::placeholder {
+  color: #fff;
+}
+.btn {
+  margin-top: 30px;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 50px;
+  padding: 5px 30px;
+  background-color: #fff;
+  width: 60%;
+  line-height: 25px;
+  letter-spacing: 2px;
+  padding: 10px 10px 10px 15px;
+  color: #444;
+}
+.loginbtn input[type="submit"] {
+  color: #d9b28cb2;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+}
