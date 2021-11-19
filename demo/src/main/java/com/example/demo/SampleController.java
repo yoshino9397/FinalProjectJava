@@ -36,28 +36,12 @@ public class SampleController {
     list = jdbcTemplate.queryForList("select * from user");
 
     for (int i = 1; i <= list.size(); i++) {
-      // System.out.println(list.get(0).values().toString());
-      // System.out.println("[" + loginForm.getId() + ", " + loginForm.getName() +
-      // "]");
-      // System.out.println(("[" + loginForm.getId() + ", " + loginForm.getName() +
-      // "]")
-      // .compareTo((list.get(i - 1).values().toString())));
-
-      if (("[" + loginForm.getId() + ", " + loginForm.getName() + "]")
-          .compareTo((list.get(i - 1).values().toString())) == 0) {
+      if (("[" + loginForm.getId() + ", " + loginForm.getName() + "]").equals((list.get(i - 1).values().toString()))) {
         model.addAttribute("message", "Login was successful");
-        // System.out.println("dcdcdcdcdcd");
+        break;
+      } else {
+        model.addAttribute("message", "Failed to login");
       }
-
-      else if (("[" + loginForm.getId() + ", " + loginForm.getName() + "]")
-          .compareTo((list.get(i - 1).values().toString())) == 1) {
-        model.addAttribute("message", "Login was jfghfhgfhg");
-        System.out.println("jfhgfhjgfhg");
-      }
-
-      // else {
-      // model.addAttribute("message", "Failed to login");
-      // }
     }
 
     return "login_result";
@@ -114,16 +98,105 @@ public class SampleController {
   @ModelAttribute
   @RequestMapping(value = "/after_delete_product", method = RequestMethod.POST)
   public String afeter_delete_product(ProductForm productForm, Model model) {
-    sampleService.delete(productForm);
-    model.addAttribute("message", "Deleting is complete.");
+    int flg = 0;
+    String str = "";
+    List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT * FROM product");
+    for (int i = 0; i < list.size(); i++) {
+      str = list.get(i).get("code").toString();
+      if (str.equals(productForm.getCode())) {
+        flg = 1;
+      }
+    }
+    if (productForm.getCode().equals(""))
+      flg = 2;
+
+    switch (flg) {
+    case 0:
+      model.addAttribute("message", "The code is not exist, please retry.");
+      break;
+    case 1:
+      sampleService.delete(productForm);
+      model.addAttribute("message", "Deleting is complete.");
+      break;
+    default:
+      model.addAttribute("message", "Please fill in field.");
+      break;
+    }
+
+    model.addAttribute("code", productForm.getCode());
     return "after_delete_product";
   }
 
   @ModelAttribute
-  @RequestMapping(value = "/show_result", method = RequestMethod.POST)
-  public String show_result(ProductForm productForm, Model model) {
-    sampleService.insert(productForm);
-    model.addAttribute("message", "Processing is complete.");
+  @RequestMapping(value = "/show_register_result", method = RequestMethod.POST)
+  public String show_register_result(ProductForm productForm, Model model) {
+    int flg = 0;
+    String str;
+    List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT * FROM product");
+    for (int i = 0; i < list.size(); i++) {
+      str = list.get(i).get("code").toString();
+      if (str.equals(productForm.getCode())) {
+        flg = 1;
+      }
+    }
+    if (productForm.getCode().equals("") || productForm.getName().equals("") || productForm.getDescription().equals("")
+        || productForm.getPrice().equals("") || productForm.getEvaluation().equals(""))
+      flg = 2;
+
+    switch (flg) {
+    case 0:
+      sampleService.insert(productForm);
+      model.addAttribute("message", "Registration is complete.");
+      break;
+    case 1:
+      model.addAttribute("message", "The code is exist, please retry.");
+      break;
+    default:
+      model.addAttribute("message", "Please fill in all fields.");
+      break;
+    }
+    model.addAttribute("code", productForm.getCode());
+    model.addAttribute("name", productForm.getName());
+    model.addAttribute("description", productForm.getDescription());
+    model.addAttribute("price", productForm.getPrice());
+    model.addAttribute("evaluation", productForm.getEvaluation());
+
+    return "show_result";
+  }
+
+  @ModelAttribute
+  @RequestMapping(value = "/show_update_result", method = RequestMethod.POST)
+  public String show_update_result(ProductForm productForm, Model model) {
+    int flg = 0;
+    String str;
+    List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT * FROM product");
+    for (int i = 0; i < list.size(); i++) {
+      str = list.get(i).get("code").toString();
+      if (str.equals(productForm.getCode())) {
+        flg = 1;
+      }
+    }
+    if (productForm.getCode().equals("") || productForm.getName().equals("") || productForm.getDescription().equals("")
+        || productForm.getPrice().equals("") || productForm.getEvaluation().equals(""))
+      flg = 2;
+
+    switch (flg) {
+    case 0:
+      model.addAttribute("message", "The product is not exist, please register first.");
+      break;
+    case 1:
+      sampleService.insert(productForm);
+      model.addAttribute("message", "Updating is complete.");
+      break;
+    default:
+      model.addAttribute("message", "Please fill in all fields.");
+      break;
+    }
+    model.addAttribute("code", productForm.getCode());
+    model.addAttribute("name", productForm.getName());
+    model.addAttribute("description", productForm.getDescription());
+    model.addAttribute("price", productForm.getPrice());
+    model.addAttribute("evaluation", productForm.getEvaluation());
 
     return "show_result";
   }
