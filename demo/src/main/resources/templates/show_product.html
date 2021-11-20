@@ -6,12 +6,24 @@
   </head>
   <body>
     <p th:text="${message}"></p>
-    <table th:each="product : ${products}">
+    <table border="1">
       <tr>
-        <td>
-          <p th:text="${product}"></p>
-        </td>
+        <th>code</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>evaluation</th>
+      </tr>
+      <tr th:each="outerMap : ${outerMap}">
+        <td><p th:text="${outerMap.value.code}"></p></td>
+        <td><p th:text="${outerMap.value.name}"></p></td>
+        <td><p th:text="${outerMap.value.description}"></p></td>
+        <td><p th:text="${outerMap.value.price}"></p></td>
+        <td><p th:text="${outerMap.value.evaluation}"></p></td>
       </tr>
     </table>
+    <form>
+      <input type="button" value="to admin menu" onclick="history.go(-1)">
+    </form>
   </body>
 </html>

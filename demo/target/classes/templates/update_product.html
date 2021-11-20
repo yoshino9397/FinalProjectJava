@@ -6,7 +6,7 @@
   </head>
   <body>
     <p th:text="${message}"></p>
-    <form th:action="@{/show_result}" th:object="${productForm}" method="post">
+    <form th:action="@{/show_update_result}" th:object="${productForm}" method="post">
       Product code：<input type="text" th:field="*{code}" />
       <br />
       Product name：<input type="text" th:field="*{name}" />
@@ -20,5 +20,6 @@
       <input type="submit" value="Update" />
       <br />
     </form>
+    <input type="button" value="to admin menu" onclick="history.go(-1)">
   </body>
 </html>
