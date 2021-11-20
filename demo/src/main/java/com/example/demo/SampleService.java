@@ -23,10 +23,11 @@ public class SampleService {
       Statement statement = connection.createStatement();
       resultSet = statement.executeQuery("select * from product");
       while (resultSet.next()) {
-        String str = resultSet.getString("code") + "  " + resultSet.getString("name") + "  "
-            + resultSet.getString("description") + "  " + resultSet.getString("price") + "  "
-            + resultSet.getString("evaluation");
-        entities.add(str);
+        entities.add(resultSet.getString("code"));
+        entities.add(resultSet.getString("name"));
+        entities.add(resultSet.getString("description"));
+        entities.add(resultSet.getString("price"));
+        entities.add(resultSet.getString("evaluation"));
       }
 
       if (connection != null) {
