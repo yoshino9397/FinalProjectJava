@@ -55,8 +55,11 @@ form input {
 input::placeholder {
   color: #fff;
 }
-.btn {
+.btns {
   margin-top: 30px;
+}
+.btn {
+  margin-bottom: 10px;
   border: 1px solid #fff;
   outline: none;
   border-radius: 50px;
@@ -70,6 +73,6 @@ input::placeholder {
   /* color: #d9b28cb2; */
   color: rgba(90, 63, 13, 0.5);
   font-weight: 900;
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
 }

@@ -3,18 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/delete_product.css}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../static/css/delete_product.css"> -->
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <form
-      th:action="@{/after_delete_product}"
-      th:object="${productForm}"
-      method="post"
-    >
-    Product code：<input type="text" th:field="*{code}" />
-      <br />
-      <input type="submit" value="delete" />
-      <br />
-    </form>
+    <div class="container">
+      <div class="box">
+
+        <p class="message" th:text="${message}"></p>
+        
+        <form th:action="@{/after_delete_product}" th:object="${productForm}" method="post">
+          <input placeholder="Product code" type="text" th:field="*{code}" />
+          <br />
+          <div class="delete-btn">
+            <input class="btn" type="submit" value="Delete" />
+          </div>
+          <br />
+        </form>
+
+      </div>
+    </div>
   </body>
 </html>

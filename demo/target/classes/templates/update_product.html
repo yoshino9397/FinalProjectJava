@@ -3,22 +3,33 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/update_product.css}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../static/css/update_product.css"> -->
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <form th:action="@{/show_result}" th:object="${productForm}" method="post">
-      Product code：<input type="text" th:field="*{code}" />
-      <br />
-      Product name：<input type="text" th:field="*{name}" />
-      <br />
-      Description ：<input type="text" th:field="*{description}" />
-      <br />
-      Price：<input type="text" th:field="*{price}" />
-      <br />
-      Evaluation：<input type="text" th:field="*{evaluation}" />
-      <br />
-      <input type="submit" value="Update" />
-      <br />
-    </form>
+    <div class="container">
+      <div class="box">
+
+        <p class="message" th:text="${message}"></p>
+
+        <form th:action="@{/show_update_result}" th:object="${productForm}" method="post">
+          <input type="text" th:field="*{code}" placeholder="Product code" class="input"/>
+          <br />
+          <input type="text" th:field="*{name}" placeholder="Product name" class="input"/>
+          <br />
+          <input type="text" th:field="*{description}" placeholder="Description" class="input"/>  
+          <br />
+          <input type="text" th:field="*{price}" placeholder="Price" class="input"/>
+          <br />
+          <input type="text" th:field="*{evaluation}" placeholder="Evaluation" class="input"/>
+          <br />
+
+          <div class="btns">
+            <input type="submit" value="UPDATE" class="btn" />
+            <input type="button" value="TO ADMIN MENU" onclick=history.go(-1) class="btn" />
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

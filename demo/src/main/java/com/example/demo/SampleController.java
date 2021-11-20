@@ -50,7 +50,7 @@ public class SampleController {
   @ModelAttribute
   @RequestMapping(value = "/admin_menu", method = RequestMethod.GET)
   public String admin_menu(Model model) {
-    model.addAttribute("message", "Please select a menu.");
+    model.addAttribute("message", "Please select a menu");
     return "admin_menu";
   }
 
@@ -60,7 +60,7 @@ public class SampleController {
     List<String> products = null;
     products = sampleService.selectAll();
     model.addAttribute("products", products);
-    model.addAttribute("message", "Displayed the product.");
+    model.addAttribute("message", "Displayed the product");
 
     return "show_product";
   }
@@ -70,7 +70,7 @@ public class SampleController {
   public String register_product(Model model) {
     ProductForm productForm = new ProductForm();
     model.addAttribute("productForm", productForm);
-    model.addAttribute("message", "Please register the product.");
+    model.addAttribute("message", "Please register the product");
 
     return "register_product";
   }
@@ -80,7 +80,7 @@ public class SampleController {
   public String update_product(Model model) {
     ProductForm productForm = new ProductForm();
     model.addAttribute("productForm", productForm);
-    model.addAttribute("message", "Please update the product.");
+    model.addAttribute("message", "Please update the product");
 
     return "update_product";
   }
@@ -116,10 +116,10 @@ public class SampleController {
       break;
     case 1:
       sampleService.delete(productForm);
-      model.addAttribute("message", "Deleting is complete.");
+      model.addAttribute("message", "Deleting is complete");
       break;
     default:
-      model.addAttribute("message", "Please fill in field.");
+      model.addAttribute("message", "Please fill in field");
       break;
     }
 
@@ -146,13 +146,13 @@ public class SampleController {
     switch (flg) {
     case 0:
       sampleService.insert(productForm);
-      model.addAttribute("message", "Registration is complete.");
+      model.addAttribute("message", "Registration is complete");
       break;
     case 1:
-      model.addAttribute("message", "The code is exist, please retry.");
+      model.addAttribute("message", "The code is exist, please retry");
       break;
     default:
-      model.addAttribute("message", "Please fill in all fields.");
+      model.addAttribute("message", "Please fill in all fields");
       break;
     }
     model.addAttribute("code", productForm.getCode());
@@ -182,14 +182,14 @@ public class SampleController {
 
     switch (flg) {
     case 0:
-      model.addAttribute("message", "The product is not exist, please register first.");
+      model.addAttribute("message", "The product is not exist, please register first");
       break;
     case 1:
       sampleService.insert(productForm);
-      model.addAttribute("message", "Updating is complete.");
+      model.addAttribute("message", "Updating is complete");
       break;
     default:
-      model.addAttribute("message", "Please fill in all fields.");
+      model.addAttribute("message", "Please fill in all fields");
       break;
     }
     model.addAttribute("code", productForm.getCode());
