@@ -7,11 +7,11 @@
   </head>
   <body>
     <div class="container">
-
       <div class="box">
 
         <p class="message" th:text="${message}"></p>
-      
+        <div class="line"></div>
+        
         <form th:action="@{/show_register_result}" th:object="${productForm}" method="post">
           <input type="text" placeholder="Product code" th:field="*{code}" />
           <br />
@@ -25,8 +25,8 @@
           <br />
           <input class="btn" type="submit" value="Register" />
           <br />
+          <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-1)">
         </form>
-        <input type="button" value="to admin menu" onclick="history.go(-1)">
       </div>
 
     </div>

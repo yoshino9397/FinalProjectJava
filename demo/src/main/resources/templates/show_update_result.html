@@ -3,23 +3,38 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/show_update_result.css}" rel="stylesheet">
   </head>
   <body>
-    <p th:text="${message}"></p>
-    <p th:text="'Product code：' + ${code}"></p>
-    <p th:text="'Product name：' + ${name}"></p>
-    <p th:text="'Description：' + ${description}"></p>
-    <p th:text="'Price：' + ${price}"></p>
-    <p th:text="'Evaluation：' + ${evaluation}"></p>
-    <form th:if="${#strings.equals(message, 'The product is not exist, please register first.')}">
-      <input type="button" value="to admin menu" onclick="history.go(-2)">
-    </form>
-    <form th:if="${#strings.equals(message, 'Updating is complete.')}">
-      <input type="button" value="to admin menu" onclick="history.go(-2)">
-    </form>
-    <form th:if="${#strings.equals(message, 'Please fill in all fields.')}">
-      <input type="button" value="to update product" onclick="history.go(-1)">
-      <input type="button" value="to admin menu" onclick="history.go(-2)">
-    </form>
+    <div class="container">
+      <div class="box">
+
+        <p class="message" th:text="${message}"></p>
+        <div class="line1"></div>
+
+        <div class="details">
+          <p class="detail" th:text="'Product code：' + ${code}"></p>
+          <div class="line"></div>
+          <p class="detail" th:text="'Product name：' + ${name}"></p>
+          <div class="line"></div>
+          <p class="detail" th:text="'Description：' + ${description}"></p>
+          <div class="line"></div>
+          <p class="detail" th:text="'Price：' + ${price}"></p>
+          <div class="line"></div>
+          <p class="detail" th:text="'Evaluation：' + ${evaluation}"></p>
+        </div>
+      </div>
+      
+      <form th:if="${#strings.equals(message, 'The product is not exist, please register first.')}">
+        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+      </form>
+      <form th:if="${#strings.equals(message, 'Updating is complete.')}">
+        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+      </form>
+      <form th:if="${#strings.equals(message, 'Please fill in all fields.')}">
+        <input class="btn" type="button" value="To update product" onclick="history.go(-1)">
+        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+      </form>
+    </div>
   </body>
 </html>

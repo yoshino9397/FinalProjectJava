@@ -25,6 +25,7 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: rgba(0, 0, 0, 0.7);
   font-size: 2rem;
+  letter-spacing: 2px;
 }
 
 .btn-wrapper {
@@ -39,40 +40,31 @@ body {
   transform: translate(-50%, -50%);
   width: 22rem;
   height: 70px;
-  background-color: #d9b28cb2;
-  border-radius: 50px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 
 .btn a {
+  width: 100%;
   color: #fff;
-}
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  /* border: 1px solid #d9b28cb2; */
+  border-radius: 50px;
+  background-color: #d9b28c;
+  overflow: hidden;
 
-.btn span {
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: top 0.3s;
+  padding: 15px 10px;
+  box-shadow: 0 5px 3px rgba(68, 68, 68, 0.3);
+  display: inline-block;
+  transition: 0.3s;
 }
-
-.btn-text-one {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.btn-text-two {
-  position: absolute;
-  width: 100%;
-  top: 150%;
-  left: 0;
-  transform: translateY(-50%);
+a:hover {
+  transform: translateY(5px);
+  box-shadow: 0 0 0 #333;
+  cursor: pointer;
 }
 
 /* .btn:hover .btn-text-one {
