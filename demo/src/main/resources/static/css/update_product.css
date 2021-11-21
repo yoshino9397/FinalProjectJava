@@ -58,8 +58,7 @@ input::placeholder {
 .btns {
   margin-top: 30px;
 }
-.btn1,
-.btn2 {
+.btn {
   margin-bottom: 10px;
   border: 1px solid #fff;
   outline: none;
@@ -71,18 +70,9 @@ input::placeholder {
   letter-spacing: 2px;
   padding: 10px 10px 10px 15px;
 
+  /* color: #d9b28cb2; */
   color: rgba(90, 63, 13, 0.5);
   font-weight: 900;
   font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 3px 3px rgba(68, 68, 68, 0.3);
-  transition: 0.3s;
-}
-.btn1:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 3px rgba(68, 68, 68, 0.3);
-}
-.btn2:hover {
-  transform: translateY(3px);
-  box-shadow: 0 0px 0px rgba(68, 68, 68, 0.3);
 }

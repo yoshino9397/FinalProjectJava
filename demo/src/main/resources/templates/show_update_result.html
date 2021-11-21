@@ -3,27 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lynx-Shopsite</title>
-    <link th:href="@{/css/show_update_result.css}" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <div class="box">
-
-        <p class="message" th:text="${message}"></p>
-        <div class="line"></div>
-
-        <div class="details">
-          <p class="detail" th:text="'Product code：' + ${code}"></p>
-          <div class="line"></div>
-          <p class="detail" th:text="'Product name：' + ${name}"></p>
-          <div class="line"></div>
-          <p class="detail" th:text="'Description：' + ${description}"></p>
-          <div class="line"></div>
-          <p class="detail" th:text="'Price：' + ${price}"></p>
-          <div class="line"></div>
-          <p class="detail" th:text="'Evaluation：' + ${evaluation}"></p>
-        </div>
-      </div>
-    </div>
+    <p th:text="${message}"></p>
+    <p th:text="'Product code：' + ${code}"></p>
+    <p th:text="'Product name：' + ${name}"></p>
+    <p th:text="'Description：' + ${description}"></p>
+    <p th:text="'Price：' + ${price}"></p>
+    <p th:text="'Evaluation：' + ${evaluation}"></p>
   </body>
 </html>

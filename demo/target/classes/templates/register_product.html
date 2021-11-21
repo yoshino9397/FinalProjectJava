@@ -10,7 +10,6 @@
       <div class="box">
 
         <p class="message" th:text="${message}"></p>
-        <div class="line"></div>
         
         <form th:action="@{/show_register_result}" th:object="${productForm}" method="post">
           <input type="text" placeholder="Product code" th:field="*{code}" />
