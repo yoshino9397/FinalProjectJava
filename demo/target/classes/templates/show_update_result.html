@@ -23,18 +23,18 @@
           <div class="line"></div>
           <p class="detail" th:text="'Evaluation：' + ${evaluation}"></p>
         </div>
+        
+        <form th:if="${#strings.equals(message, 'The product is not exist, please register first')}">
+          <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+        </form>
+        <form th:if="${#strings.equals(message, 'Updating is complete')}">
+          <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+        </form>
+        <form th:if="${#strings.equals(message, 'Please fill in all fields')}">
+          <input class="btn" type="button" value="Back" onclick="history.go(-1)">
+          <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
+        </form>
       </div>
-      
-      <form th:if="${#strings.equals(message, 'The product is not exist, please register first.')}">
-        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
-      </form>
-      <form th:if="${#strings.equals(message, 'Updating is complete.')}">
-        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
-      </form>
-      <form th:if="${#strings.equals(message, 'Please fill in all fields.')}">
-        <input class="btn" type="button" value="To update product" onclick="history.go(-1)">
-        <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
-      </form>
     </div>
   </body>
 </html>
