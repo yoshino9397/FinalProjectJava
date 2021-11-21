@@ -8,55 +8,33 @@
   </head>
 
   <body>
-    <div class="container">
+
+   <div class="container">
       <div class="box">
         <div class="prod-text">
           <p th:text="${message}"></p>
         </div>
-        <table class="prod-table" th:each="product : ${products}">
+        <table border="1">
           <tr>
-            <td>
-              <!-- <p th:text="${product}"></p> -->
-              Product code
-            </td>
-            <td>
-              {~~~}
-            </td>
-          <tr>
-            <td>
-              Product name
-            </td>
-            <td>
-              {~~~}
-            </td>
+            <th>code</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>evaluation</th>
           </tr>
-          <tr>
-            <td>
-              Description
-            </td>
-            <td>
-              {~~~}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Price
-            </td>
-            <td>
-              {~~~}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Evaluation
-            </td>
-            <td>
-              {~~~}
-            </td>
-          </tr>
+          <tr th:each="outerMap : ${outerMap}">
+            <td><p th:text="${outerMap.value.code}"></p></td>
+            <td><p th:text="${outerMap.value.name}"></p></td>
+            <td><p th:text="${outerMap.value.description}"></p></td>
+            <td><p th:text="${outerMap.value.price}"></p></td>
+            <td><p th:text="${outerMap.value.evaluation}"></p></td>
           </tr>
         </table>
-      </div>
-    </div>
+        <form>
+          <input type="button" value="to admin menu" onclick="history.go(-1)">
+        </form>
+     </div>
+   </div>
+
   </body>
 </html>

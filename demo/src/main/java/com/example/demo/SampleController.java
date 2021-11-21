@@ -59,6 +59,21 @@ public class SampleController {
   public String show_product(Model model) {
     List<String> products = null;
     products = sampleService.selectAll();
+    Map<Integer, Map<String, String>> outerMap = new HashMap<>();
+    int j = 0;
+
+    for (int i = 0; i < products.size(); i += 5) {
+      Map<String, String> innerMap = new HashMap<>();
+      innerMap.put("code", products.get(i));
+      innerMap.put("name", products.get(i + 1));
+      innerMap.put("description", products.get(i + 2));
+      innerMap.put("price", products.get(i + 3));
+      innerMap.put("evaluation", products.get(i + 4));
+      outerMap.put(j, innerMap);
+      j++;
+    }
+
+    model.addAttribute("outerMap", outerMap);
     model.addAttribute("products", products);
     model.addAttribute("message", "Displayed the product");
 
