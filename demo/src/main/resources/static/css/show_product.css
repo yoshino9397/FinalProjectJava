@@ -25,10 +25,16 @@ body {
   width: 400px;
   border: 1px solid #fff;
   border-radius: 10px;
-  background-color: #d9b28cb2;
+  background-color: rgba(90, 63, 13, 0.5);
   box-shadow: 0.1rem 0.1rem 0.6rem #ccc, -0.1rem -0.1rem 0.6rem #ccc;
   padding: 5rem;
   text-align: center;
+  overflow: scroll;
+}
+.message {
+  color: #fff;
+  font-size: 23px;
+  margin: 10px;
 }
 .prod-text {
   font-size: 30px;
@@ -44,4 +50,10 @@ body {
 .prod-table td {
   padding: 10px;
   text-align: left;
+}
+.line {
+  width: 15%;
+  height: 1px;
+  background-color: #fff;
+  margin: 15px auto;
 }

@@ -9,6 +9,7 @@
     <div class="container">
       <form th:action="@{/login_result}" th:object="${loginForm}" method="post">
         <p th:text="${message}"></p>
+
         <div class="yourid">
           <input class="idfield" type="text" placeholder="ID" th:field="*{id}" />
         </div>

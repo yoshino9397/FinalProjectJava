@@ -11,12 +11,13 @@
     <div class="container">
       <div class="box">
         <div class="prod-text">
-          <p th:text="${message}"></p>
+          <p class="message" th:text="${message}"></p>
+
         </div>
         <table class="prod-table" th:each="product : ${products}">
           <tr>
             <td>
-              <!-- <p th:text="${product}"></p> -->
+              <p th:text="${product}"></p>
               Product code
             </td>
             <td>
@@ -55,6 +56,8 @@
             </td>
           </tr>
           </tr>
+          
+          <div class="line"></div>
         </table>
       </div>
     </div>
