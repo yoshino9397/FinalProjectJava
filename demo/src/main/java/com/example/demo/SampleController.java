@@ -127,14 +127,14 @@ public class SampleController {
 
     switch (flg) {
     case 0:
-      model.addAttribute("message", "The code is not exist, please retry.");
+      model.addAttribute("message", "The code is not exist, please retry");
       break;
     case 1:
       sampleService.delete(productForm);
       model.addAttribute("message", "Deleting is complete");
       break;
     default:
-      model.addAttribute("message", "Please fill in field");
+      model.addAttribute("message", "Please fill in a field");
       break;
     }
 
