@@ -35,7 +35,7 @@ body {
 .message {
   color: #fff;
   font-size: 23px;
-  margin: 10px;
+  margin: 10px 10px 40px;
 }
 form {
   margin-top: 20px;
@@ -56,20 +56,31 @@ input::placeholder {
   color: #fff;
 }
 .btn {
-  margin-top: 30px;
-  border: 1px solid #fff;
+  margin-top: 25px;
+  border: 1px solid rgb(155, 0, 0);
   outline: none;
   border-radius: 50px;
   padding: 5px 30px;
-  background-color: #fff;
+  background-color: rgb(155, 0, 0);
+  /* background-color: #fff; */
   width: 60%;
   line-height: 25px;
   letter-spacing: 2px;
   padding: 10px 10px 10px 15px;
-
-  /* color: #d9b28cb2; */
-  color: rgba(90, 63, 13, 0.5);
-  font-weight: 900;
   font-size: 18px;
+  font-weight: 700;
+  transition: 0.5s;
+}
+.delete-btn input[type="submit"] {
   cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+}
+.btn:hover {
+  border: 1px solid #fff;
+  background-color: #fff;
+  /* background-color: rgba(255, 0, 0, 0.4); */
+}
+.delete-btn input[type="submit"]:hover {
+  color: rgb(155, 0, 0);
 }

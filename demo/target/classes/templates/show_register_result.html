@@ -11,6 +11,7 @@
     <p th:text="'Description：' + ${description}"></p>
     <p th:text="'Price：' + ${price}"></p>
     <p th:text="'Evaluation：' + ${evaluation}"></p>
+
     <form th:if="${#strings.equals(message, 'Registration is complete.')}">
       <input type="button" value="to admin menu" onclick="history.go(-2)">
     </form>
@@ -22,5 +23,6 @@
       <input type="button" value="to register product" onclick="history.go(-1)">
       <input type="button" value="to admin menu" onclick="history.go(-2)">
     </form>
+
   </body>
 </html>
