@@ -6,10 +6,9 @@
     <link th:href="@{/css/admin_menu.css}" rel="stylesheet">
   </head>
   <body>
-    <!-- <p th:text="${message}"></p> -->
 
-    <p>Please Select a Menu</p>
     <div class="container">
+      <p class="message" th:text="${message}"></p>
 
       <div class="menu-wrapper">
 
@@ -17,23 +16,27 @@
           <ul class="first-row">
             <li class="border">
               <a href="/show_product">Display of all registered products</a>
+              <span> >> </span>
             </li>
             <li class="border">
               <a href="/register_product">Product registration</a>
+              <span> >> </span>
             </li>
           </ul>
             
           <ul class="second-row">
             <li class="border">
               <a href="/update_product">Product update</a>
+              <span> >> </span>
             </li>
             <li class="border">
               <a href="/delete_product">Delete product</a>
+              <span> >> </span>
             </li>
           </ul>
         </div>
 
       </div>
-      </div>
+    </div>
   </body>
 </html>
