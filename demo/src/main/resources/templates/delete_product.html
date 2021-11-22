@@ -13,10 +13,11 @@
         <p class="message" th:text="${message}"></p>
         
         <form th:action="@{/after_delete_product}" th:object="${productForm}" method="post">
-          <input placeholder="Product code" type="text" th:field="*{code}" />
+          <input class="delete-place" placeholder="Product code" type="text" th:field="*{code}" />
           <br />
           <div class="delete-btn">
             <input class="btn" type="submit" value="Delete" />
+            <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-1)">
           </div>
           <br />
         </form>
