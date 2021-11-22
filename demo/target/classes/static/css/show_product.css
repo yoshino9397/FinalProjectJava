@@ -23,13 +23,13 @@ body {
 }
 .box {
   width: auto;
+  max-height: 60vh;
   border: 1px solid #fff;
   border-radius: 10px;
   background-color: rgba(90, 63, 13, 0.5);
   box-shadow: 0.1rem 0.1rem 0.6rem #ccc, -0.1rem -0.1rem 0.6rem #ccc;
   padding: 5rem;
   text-align: center;
-  overflow: scroll;
 }
 .message {
   color: #fff;
@@ -40,8 +40,12 @@ body {
   font-size: 30px;
   margin: 10px;
 }
-
+.table-box {
+  max-height: 45vh;
+  overflow: scroll;
+}
 .p-table {
+  height: auto;
   margin-bottom: 1rem;
   color: #fff;
 }
