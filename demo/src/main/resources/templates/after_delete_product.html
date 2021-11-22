@@ -16,14 +16,15 @@
         </div>
 
         <form th:if="${#strings.equals(message, 'The code is not exist, please retry')}">
+          <input class="btn" type="button" value="Try again" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
         <form th:if="${#strings.equals(message, 'Deleting is complete')}">
-          <input class="btn" type="button" value="Back" onclick="history.go(-1)">
+          <input class="btn" type="button" value="Delete more" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
         <form th:if="${#strings.equals(message, 'Please fill in a field')}">
-          <input class="btn" type="button" value="Back" onclick="history.go(-1)">
+          <input class="btn" type="button" value="Try again" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
 

@@ -25,13 +25,15 @@
         </div>
         
         <form th:if="${#strings.equals(message, 'The product is not exist, please register first')}">
+          <input class="btn" type="button" value="Try again" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
         <form th:if="${#strings.equals(message, 'Updating is complete')}">
+          <input class="btn" type="button" value="Update more" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
         <form th:if="${#strings.equals(message, 'Please fill in all fields')}">
-          <input class="btn" type="button" value="Back" onclick="history.go(-1)">
+          <input class="btn" type="button" value="Try again" onclick="history.go(-1)">
           <input class="back-to-menu-btn" type="button" value="To admin menu" onclick="history.go(-2)">
         </form>
       </div>
