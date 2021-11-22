@@ -57,6 +57,8 @@ body {
   height: 12rem;
   position: relative;
   color: #444;
+  box-shadow: 0.1rem 0.1rem 0.5rem #ccc, -0.1rem -0.1rem 0.5rem #ccc;
+  border-radius: 10px;
 }
 .menu a {
   width: 100%;

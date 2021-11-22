@@ -23,7 +23,7 @@ body {
 }
 .box {
   width: auto;
-  max-height: 60vh;
+  max-height: 65vh;
   border: 1px solid #fff;
   border-radius: 10px;
   background-color: rgba(90, 63, 13, 0.5);
@@ -92,5 +92,5 @@ td {
   width: 15%;
   height: 1px;
   background-color: #fff;
-  margin: 15px auto;
+  margin: 20px auto;
 }

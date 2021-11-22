@@ -59,7 +59,7 @@ body {
   padding: 15px 10px;
   box-shadow: 0 5px 3px rgba(68, 68, 68, 0.3);
   display: inline-block;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 a:hover {
   transform: translateY(5px);
