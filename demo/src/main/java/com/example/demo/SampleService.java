@@ -19,7 +19,7 @@ public class SampleService {
     Connection connection = null;
 
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "Yuuki5196"); // localhost:3306を変更
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", ""); // localhost:3306を変更
       Statement statement = connection.createStatement();
       resultSet = statement.executeQuery("select * from product");
       while (resultSet.next()) {
@@ -45,7 +45,7 @@ public class SampleService {
     Connection connection = null;
 
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "Yuuki5196");
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "");
       delete(productForm);
       PreparedStatement statement = connection.prepareStatement("INSERT INTO product VALUES (?, ?, ?, ?, ?)");
 
@@ -70,7 +70,7 @@ public class SampleService {
     Connection connection = null;
 
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "Yuuki5196");
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "");
       PreparedStatement statement = connection
           .prepareStatement("UPDATE product SET code=?, name=?, description=?, price=?, evaluation=? WHERE code=?");
 
@@ -96,7 +96,7 @@ public class SampleService {
     Connection connection = null;
 
     try {
-      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "Yuuki5196");
+      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "");
       PreparedStatement statement = connection.prepareStatement("DELETE FROM product WHERE code=?");
 
       statement.setString(1, productForm.getCode());
